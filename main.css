@@ -1,0 +1,659 @@
+@font-face{
+    src: url(fonts/Roboto-Regular.ttf);
+    font-family: Roboto-Regular;
+}
+@font-face{
+    src: url(fonts/Roboto-Light.ttf);
+    font-family: Roboto-Light;
+}
+@font-face{
+    src: url(fonts/Roboto-Bold.ttf);
+    font-family: Roboto-Bold;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Roboto-Regular;
+    color: rgb(82, 81, 81);
+    font-size: 17px;
+}
+.modal-open {
+    padding-right: unset !important;
+}
+.aboveNav{
+    background: #e65116;
+    color: white;
+    padding: 0.3rem 1.1rem;
+    width: 100%;
+    font-size: 14px;
+}
+.leftSide{
+    display: flex;
+    justify-content: start;
+}
+.mail{
+    color: white;
+    text-decoration: none !important;
+    padding-right: 0.5rem;
+}
+.mail:hover{
+    color: gray;
+    transition-duration: 0.6s;
+}
+.decoration{
+    border-left: 1px solid white;
+    padding-right: 0.2rem;
+}
+.rightSide{
+    display: flex;
+    justify-content: flex-end;
+}
+.fa-facebook, .fa-instagram, .fa-linkedin{
+    color: rgb(223, 223, 223);
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+/*==== navbar ===== */
+.nav-bann{
+    height: 55vh;
+    background: url('img/bg4.jfif') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+}
+.layer{
+    background: rgba(95, 24, 6, 0.527);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.navbar{
+    height: 65px;
+    padding-bottom: unset;
+    background: rgba(41, 10, 2, 0.6);
+    line-height: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    font-family: Roboto-Light;
+}
+.navbar-nav{
+    height: 66px;
+    padding-top: 15px;
+    cursor:pointer;
+    color: white;
+}
+.logo{
+    height: 65px;
+}
+#navbarResponsive{
+    text-align: center;
+}
+.nav-item:not(:last-child):hover{
+    transition-duration: 0.5s;
+    border-bottom: 3px solid #f05b20;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+    padding-right: 20px;
+}
+.dropdown-menu{
+    border-radius: unset;
+    transition-duration: 0.7s;
+}
+#meni{
+    display: block;
+    text-align: left;
+    padding: 10px;
+}
+.dropdown-item{
+    display: block;
+    text-align: left;
+    padding: 10px;
+}
+.dropdown-item:hover{
+    color: #f05b20;
+    background-color: rgba(194, 192, 192, 0.767);
+    transition-duration: 0.7s;
+}
+.dropdown-toggle::after {
+    content: none;
+}
+.navbar-btn1{
+    background-color: Transparent;
+    color: white;
+    border: 1px solid white;
+    cursor:pointer;
+    overflow: hidden;   
+}
+.navbar-btn2{
+    color: white;
+    background: #f05b20;
+    cursor:pointer;
+    overflow: hidden;   
+}
+.naslov{
+    color: white;
+    display: felx;
+    position: absolute;
+    transform: translateY(70%);
+    text-align: center;
+}
+.paragraf{
+    background: rgba(41, 10, 2, 0.6);
+    font-size: 55px;
+    width: 45%;
+    transform: translateX(60%);
+}
+.paragraf1{
+    font-size: 30px;
+    color: white;
+}
+.addImg, .addCv{
+    border: 1px solid transparent;
+    box-shadow: 0 0 13px rgba(0,0,0,0.11);
+    border-radius: 3%;
+    height: 35%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+.addImg:hover, .addCv:hover{
+    cursor: pointer;
+    border: 1px solid #da4e17;
+}
+.imag{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 38%;
+    transform: translateY(40%);
+}
+#aparat{
+    transform: translateY(60%);
+}
+.dodaj{
+    transform: translateY(140%);
+    text-align: center;
+    color: rgb(167, 166, 166);
+    font-weight: bold;
+    font-size: 16px;
+}
+.wrapp{
+    margin-top: 4%;
+}
+.linija{
+    border-top: 2px solid #ccc;
+    padding-top: 2%;
+}
+.changeColor{
+    background-color: #fff;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
+    border-bottom: 1px solid rgba(194, 192, 192, 0.767);
+}
+.navbar-toggler{
+    border-color: rgb(82, 81, 81) !important;
+}
+.changeColor .nav-link {
+    color: rgb(82, 81, 81) !important;
+}
+.changeColor  .nav-itemm .navbar-btn1 {
+    border: 1px solid #f15929 !important;
+}
+.changeColor .left .nav-itemm .navbar-btn1{
+    color: #f15929 !important;
+}
+
+/*============ POP-UP ========= */
+.modal-contnet{
+    margin-top: unset;
+}
+.modal-header{
+    background: #f05b20;
+    border-bottom: unset;
+}
+.modal-body{
+    background: #f05b20;
+    color: white;
+}
+.reg{
+    font-size: 20px;
+    padding: 10px;
+}
+.popupBtn{
+    background: #f05b20;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50%;
+    width: 40%;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10%;
+    padding-top: 15px;
+    position: relative;
+}
+
+/*=========forma=========  */
+.form-group{
+    width: 100%;
+    outline: none;
+    padding-bottom: 3%;
+}
+.podaciBold{
+    font-size: 19px;
+    font-family: Roboto-Bold;
+    padding: 10px;
+}
+.form-control{
+    padding: 3.7%;
+    box-shadow: none;
+    width: 100%;
+    outline: none;
+}
+div .btn-light {
+    background-color: white !important;
+    border: 1px solid #ccc;
+    padding: 4%;
+    color: #da4e17;
+}
+.bootstrap-select>.dropdown-toggle{
+    z-index: 0;
+}
+.info{
+    padding-bottom: 1rem;
+}
+.form-control:focus, .form-control:hover{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none !important;
+    color: #da4e17 !important;
+}
+.jezik{
+    padding: unset;
+    padding-left: 5.5rem;
+}
+
+.mob_no_padd-mon{
+    height: 3.5rem;
+    padding-bottom: 0;
+}
+
+.mob_no_padd-mon .dropdown.bootstrap-select.form-control,
+.mob_no_padd-mon .dropdown.bootstrap-select.form-control>select,
+.mob_no_padd-mon .dropdown.bootstrap-select.form-control>button{
+    height: 100%;
+}
+
+.mob_no_padd-mon .dropdown.bootstrap-select.form-control .filter-option{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+/* ========jumbotron======= */
+.jumbotron{
+    padding: 2rem 2rem;
+}
+.leftBox, .rightBox1, .rightBox2{
+    background: white;
+    height: 3.9rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    cursor: pointer;
+}
+.bezIskustva{
+    font-size: 18px;
+    padding: 1.1rem;
+    cursor: pointer;
+}
+.dodajBoju{
+    border: none;
+    color: #da4e17;
+    float: left;
+    background: white;
+    cursor: pointer;
+    outline: white;
+}
+/* ============= POP-UP dva ============ */
+
+.modal-header-dva{
+    height: 10%;
+    padding: 1%;
+    text-align: center;
+    background-color: #f05b20;
+    border-radius: 2%;
+    color: white;
+}
+.formaPop{
+    padding: 3%;
+}
+.modal-body-dva{
+    color: rgb(82, 81, 81);
+    background-color: white;
+}
+.btn-popUpBtn{
+    background: #f05b20;
+    border: none;
+    cursor: pointer;
+    color: white !important;
+    text-align: center !important;
+    font-weight: bold;
+    height: 100%;
+    width: 80%; 
+    outline: none;
+    font-size: 18px;
+    margin: 5% 0;
+}
+.plus{
+    height: 30px;
+    filter: invert(100%); 
+    -webkit-filter:invert(100%);
+}
+
+/* =========== SLIDER VJESTINE ================= */
+.rightBox3{
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+    padding: 0.7rem;
+}
+.rightBox3 .slider{
+    margin-top: 10px;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 55%;
+    height: 15px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #f1592a 0%, #f1592a 45%, #f1f2f2 45%, #f1f2f2 100%);
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  .slider:hover {
+    opacity: 1;
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e65116;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e65116;
+    cursor: pointer;
+  }
+
+
+
+/* ======== LOGIN ======= */
+.login{
+    padding-top: 2rem;
+    font-weight: bold;
+    font-size: 21px;
+    font-family: Roboto-Bold;
+}
+.logovanje{
+    font-weight: bold;
+}
+.sifra{
+    width: 100%;
+    height: 52px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5%;
+    outline: none;
+    color: #da4e17;
+}
+.fa-eye{
+    display: inline-block;
+    position: absolute;
+    margin-left: -10%;
+    margin-top: 5%;
+}
+.oko {
+    color:rgb(145, 145, 145);
+}
+.oko:hover, .oko:focus{
+      color: green;
+}
+.uslovi{
+    color: #f05b20;
+    text-decoration: underline;
+    font-weight: bold;
+    padding-top: 3rem;
+}
+.iskustvo{
+    padding-bottom: 2%;
+}
+.btn-kreiraj{
+    background: #f05b20;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 4rem 0.8rem 1.3rem;
+    outline: none;
+    font-size: 20px;
+    margin-bottom: 10%;
+}
+.check{
+    padding-right: 2.8rem;
+    height: 2rem;
+    filter: invert(100%); 
+    -webkit-filter:invert(100%);
+}
+
+
+/*=================== FOOTER ====================*/
+.futer{
+    font-family: Roboto-Light;
+}
+.line1{
+    border-top: 1px solid rgba(231, 230, 230, 0.8);
+    padding-top: 2%;
+}
+.line2{
+    border-top: 1px solid rgba(231, 230, 230, 0.8);
+    padding-top: 1%;
+}
+.prgF{
+    font-size: 22px;
+    padding-bottom: 0.5rem;
+}
+.logoFuter{
+    height: 50px;
+}
+.futerC{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 2%;
+}
+.ikonice{
+    text-align: center;
+}
+.social{
+    height: 22px;
+    padding-left: 2%;
+}
+.icons{
+    height: 22px;
+    padding-right: 0.3rem;
+}
+.pFuter, .pFuter:hover{
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: rgb(82, 81, 81);
+}
+ul{
+    list-style-type: none;
+}
+.content{
+    margin-left: 7%;
+}
+
+ #output, #output2{
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/*  */
+.opisPosla{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.arrow{
+    height: 10px;
+    margin-top: 15px;
+}
+
+
+/* ======================================================== */
+
+@media (max-width: 576px){
+    body{
+        width: auto;
+        height: auto;
+        overflow-x: hidden;
+    }
+    /* .naslov .mob_no_padd{
+        padding: unset !important;
+    } */
+    .leftSide{
+        font-size: 15px;
+    }
+    .fa-linkedin, .fa-facebook, .fa-instagram{
+        height: 18px;
+        padding-right: unset;
+        padding-left: 5px;
+    }
+    .navbar {
+        height: unset;
+    }
+    .navbar-nav {
+        height: unset !important;
+    }
+    .nav-bann{
+        height: 90vh;
+    }
+    .nav-item{
+        border-bottom: 1px solid gray;
+        padding: 0.7rem;
+    }
+    .paragraf{
+        transform: translateX(0);
+        transform: translateY(-100%);
+        font-size: 50px;
+    }
+    .aboveNav{
+        padding: 0;
+        width: auto;
+    }
+    .leftSide{
+        padding-right: unset;
+        padding-left: 0.1rem;
+        font-size: 14px;
+        align-items: center;
+    }
+    .decoration{
+        padding-right: unset;
+        border: none;
+    }
+    .rightSide{
+        padding-top: 0.5rem;
+    }
+    .select2-container .select2-selection--single{
+        width: 100%;
+    }
+    .dropdown bootstrap-select form-control{
+        padding: 13%;
+    }
+    .leftBox, .rightBox1, .rightBox2{
+        padding: 0.5rem;
+    }
+   .dodajBoju{
+       padding-left: 1rem;
+       
+   }
+   .popupBtn{
+       padding-top: 15px;
+   }
+   .jumbotron{
+       padding: 10px 0;
+   }
+   .nazivVjestine{
+    width: 50%;
+}
+  
+}
+
+@media (max-width: 992px){
+   
+    .mail{
+        text-align: center;
+        font-size: 15px;
+    }
+    .decoration{
+        padding-left: 0.5rem;
+        border: none;
+    }
+    .paragraf{
+        font-size: 45px;
+        transform: translateX(0);
+        transform: translateY(-100%);
+        width: 100%;
+        font-size: 50px;
+    }
+    .addCv, .addImg{
+        height: 60%;
+    }
+    .imag{
+        width: 16%;
+        transform: translateY(30%);
+    }
+    .dodaj{
+        transform: translateY(100%);
+    }
+    .podaci{
+        padding-top: 8rem;
+    }
+    .jezik{
+        padding-left: 0;
+    }
+    #mainPop{
+        height: 100vh;
+        width: 100vw;
+    }
+    .social{
+        margin-bottom: 5px;
+    }
+}
