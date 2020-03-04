@@ -23,7 +23,7 @@ $(document).ready(function () {
 /* ================= DRZAVE I GRADOVI ================= */
 
  var lookup = {
-    'Crna Gora': ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić'],
+    'Crna Gora': ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić', 'Herceg Novi'],
     'Srbija': ['Beograd', 'Novi Sad', 'Subotica', 'Niš'],
     'Bosna i Hercegovina': ['Sarajevo', 'Mostar', 'Banja Luka'],
     'Francuska': ['Strasbourg'],
