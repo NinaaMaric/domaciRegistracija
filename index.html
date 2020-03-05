@@ -19,13 +19,12 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>-->
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <link href="main.css" type="text/css" rel="stylesheet">
 </head>
-
+<script src="script.js"></script>
 <body>
 
     <!-- ============ ABOVE NAV ============= -->
@@ -314,8 +313,8 @@
                                     <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                         Država <img src="img/ellipse.png" alt="ellipse"><br>
                                         <!-- <input type="text" class="form-control" id="state" name="state" required> -->
-                                        <select data-live-search="true" class="form-control selectpicker" id="options"
-                                        >
+                                        <select data-live-search="true" class="form-control selectpicker" id="izaberiDrzavu"
+                                        onchange="configureDropDownLists(this,document.getElementById('izaberiGrad'))">
                                             <option value="state" disabled selected>Država</option>
                                             <option value="cg">Crna Gora</option>
                                             <option value="srb">Srbija</option>
@@ -327,7 +326,7 @@
                                     <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                         Grad <img src="img/ellipse.png" alt="ellipse"><br>
                                         <!-- <input type="text" class="form-control" id="city" name="city" required> -->
-                                        <select data-live-search="true" class="form-control selectpicker" id="choices">
+                                        <select data-live-search="true" class="form-control selectpicker" id="izaberiGrad">
                                            <option value="" disabled selected>Grad</option>
                                             <!-- <option value="Bar">Bar</option>
                                             <option value="Podgorica">Podgorica</option>
@@ -1222,7 +1221,7 @@
         }
     </script>
 
-    <script src="script.js"></script>
+   
 </body>
 
 </html>

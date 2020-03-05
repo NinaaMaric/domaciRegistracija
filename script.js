@@ -21,7 +21,7 @@ $(document).ready(function () {
 });
 
 /* ================= DRZAVE I GRADOVI ================= */
-
+/* 
  var lookup = {
     'Crna Gora': ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić', 'Herceg Novi'],
     'Srbija': ['Beograd', 'Novi Sad', 'Subotica', 'Niš'],
@@ -42,9 +42,9 @@ $(document).ready(function () {
        // Output choice in the target field
        $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
     }
- });
+ }); */
  
-/* 
+
 function configureDropDownLists(izaberi, izaberiGrad) {
     var cg = ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić'];
     var srb = ['Beograd', 'Novi Sad', 'Subotica', 'Niš'];
@@ -94,8 +94,9 @@ function createOption(izaberiDrzavu, text, value) {
     opt.value = value;
     opt.text = text;
     izaberiDrzavu.options.add(opt);
+   /*  $('#izaberiGrad').selectpicker('refresh'); */
 }
- */
+
 
 /* ============= OPEN FILE =============== */
 /* SLIKA */
