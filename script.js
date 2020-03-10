@@ -25,11 +25,10 @@ $(document).ready(function() {
   }
 });
 
-
-function samoSlova(event){
-    var pattern=/[a-zA-Z]+/g;
-    / console.log(event.key); /
-    return(pattern.test(event.key));
+function samoSlova(event) {
+  var pattern = /[a-zA-Z]+/g;
+  / console.log(event.key); /;
+  return pattern.test(event.key);
 }
 
 /* ================= DRZAVE I GRADOVI ================= */
@@ -209,7 +208,7 @@ window.onload = function() {
     var fileSize = this.files[0].size;
     if (fileSize > 2097152) {
       alert("Fajl je veći od 2MB.");
-      return; 
+      return;
     }
 
     filePath.innerHTML = "<b>Slika je dodata.</b>";
@@ -240,9 +239,9 @@ window.onload = function() {
     var fileSize = this.files[0].size;
     if (fileSize > 2097152) {
       alert("Fajl je veći od 2MB.");
-      return; 
+      return;
     }
-    
+
     var fileName = fileupload2.value.split("\\")[
       fileupload2.value.split("\\").length - 1
     ];
@@ -358,6 +357,24 @@ $(document).ready(function() {
     let grad = $("#grad").val();
     let drzava = $("#drzava").val();
     let opis = $("#textArea1").val();
+    let radimTrenutno = $("#radimTrenutno").is(":checked");
+
+    if (pocetakGodina > zavesetakGodina && !radimTrenutno) {
+      alert(
+        "Godina početka je veća od godine završetka! Molimo unesite adekvatne podatke"
+      );
+      return;
+    }
+    if (
+      pocetakMjesec >= zavrsetakMjesec &&
+      pocetakGodina == zavesetakGodina &&
+      !radimTrenutno
+    ) {
+      alert(
+        "Mjesec početka je veći od mjeseca završetka! Molimo unesite adekvatne podatke"
+      );
+      return;
+    }
 
     $(
       "<div class='leftBx py-1 px-1' style='cursor: pointer'>" +
@@ -405,6 +422,19 @@ $(document).ready(function() {
     let godinaZavrsetkaO = $("#godinaZavrsetakO").val();
     let zavrsetakO = mjesecZavrsetakO + " " + godinaZavrsetkaO;
 
+    if (godinaPocetakO > godinaZavrsetkaO) {
+      alert(
+        "Godina početka je veća od godine završetka! Molimo unesite adekvatne podatke"
+      );
+      return;
+    }
+    if (mjesecPocetakO >= mjesecZavrsetakO && godinaPocetakO == godinaZavrsetkaO) {
+      alert(
+        "Mjesec početka je veći od mjeseca završetka! Molimo unesite adekvatne podatke"
+      );
+      return;
+    }
+
     $(
       "<div class='RightBx py-2 px-2' style='cursor: pointer'>" +
         "<div class='wrapp2'>" +
@@ -430,19 +460,18 @@ $(document).ready(function() {
   });
 });
 
- /* ================ E-MAIL VALIDATION ================== */
- $('#mejl').on('keyup change paste cut click', '#email', function(e) {
-    var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,
-        emailVal = $('#email').val(),
-        emailErrorMsg = (!emailVal || !pattern.test(emailVal)) 
-        ? 'E-mail nije validan.'
-        : '';
+/* ================ E-MAIL VALIDATION ================== */
+$("#mejl").on("keyup change paste cut click", "#email", function(e) {
+  var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,
+    emailVal = $("#email").val(),
+    emailErrorMsg =
+      !emailVal || !pattern.test(emailVal) ? "E-mail nije validan." : "";
 
-    $('.email-error').text(emailErrorMsg);
+  $(".email-error").text(emailErrorMsg);
 
-    if (emailErrorMsg) {
-        e.preventDefault();
-    }
+  if (emailErrorMsg) {
+    e.preventDefault();
+  }
 });
 
 /* ============ SHOW PASSWORD ========== */
@@ -462,20 +491,19 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $("#confirm_password a").on("click", function(event) {
-      event.preventDefault();
-      if ($("#confirm_password input").attr("type") == "text") {
-        $("#confirm_password input").attr("type", "password");
-        $("#confirm_password i").addClass("fas fa-eye");
-        $("#confirm_password i").removeClass("fa-eye");
-      } else if ($("#confirm_password input").attr("type") == "password") {
-        $("#confirm_password input").attr("type", "text");
-        $("#confirm_passwordd i").removeClass("fas fa-eye");
-        $("#confirm_password i").addClass("fa-eye");
-      }
-    });
+  $("#confirm_password a").on("click", function(event) {
+    event.preventDefault();
+    if ($("#confirm_password input").attr("type") == "text") {
+      $("#confirm_password input").attr("type", "password");
+      $("#confirm_password i").addClass("fas fa-eye");
+      $("#confirm_password i").removeClass("fa-eye");
+    } else if ($("#confirm_password input").attr("type") == "password") {
+      $("#confirm_password input").attr("type", "text");
+      $("#confirm_passwordd i").removeClass("fas fa-eye");
+      $("#confirm_password i").addClass("fa-eye");
+    }
   });
-
+});
 
 $("#pass-field, #confirm-pass-field").on("keyup", function() {
   if ($("#pass-field").val() == $("#confirm-pass-field").val()) {
