@@ -535,7 +535,13 @@ ul{
     height: 10px;
     margin-top: 15px;
 }
-
+/* za email validaciju */
+.error {
+    color: red;
+}
+.submit {
+    margin-top: 10px;
+}
 
 /* ======================================================== */
 

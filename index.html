@@ -18,11 +18,12 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
      <link href="main.css" type="text/css" rel="stylesheet">
 </head>
-<script src="script.js"></script>
+
 <body>
 
     <!-- ============ ABOVE NAV ============= -->
@@ -178,11 +179,11 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                         Ime <img src="img/ellipse.png" alt="ellipse"><br>
-                                        <input type="text" class="form-control" id="firstName" name="fistName" required>
+                                        <input type="text" class="form-control" id="firstName" name="fistName" onkeydown="return samoSlova(event)" required>
                                     </div>
                                     <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                         Prezime <img src="img/ellipse.png" alt="ellipse"><br>
-                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" onkeydown="return samoSlova(event)" required>
                                     </div>
                                     <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                         Pol <img src="img/ellipse.png" alt="ellipse"><br>
@@ -312,7 +313,7 @@
                                         Država <img src="img/ellipse.png" alt="ellipse"><br>
                                         <!-- <input type="text" class="form-control" id="state" name="state" required> -->
                                         <select data-live-search="true" class="form-control selectpicker" id="izaberiDrzavu"
-                                        onchange="configureDropDownLists(this,document.getElementById('izaberiGrad'))">
+                                        onchange="konfiguracija(this,document.getElementById('izaberiGrad'))">
                                             <option value="state" disabled selected>Država</option>
                                             <option value="cg">Crna Gora</option>
                                             <option value="srb">Srbija</option>
@@ -494,29 +495,27 @@
                                                             <input type="text" class="form-control" id="poslodavac"
                                                                 name="poslodavac" required>
                                                         </div>
-                                                        <div class="col-sm-12 col-lg-6 mob_no_padd info">
+                                                        <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                                             Država <img src="img/ellipse.png" alt="ellipse"><br>
                                                             <!-- <input type="text" class="form-control" id="state" name="state" required> -->
-                                                            <select data-live-search="true"
-                                                                class="form-control selectpicker" id="drzava"
-                                                                name="drzava" required>
-                                                                <option value="odaberi" disabled selected>Odaberi
-                                                                </option>
-                                                                <option value="Crna Gora">Crna Gora</option>
-                                                                <option value="Srbija">Srbija</option>
+                                                            <select data-live-search="true" class="form-control selectpicker" id="izaberiDrzavuPopupF"
+                                                            onchange="configureDropDownLists(this,document.getElementByIdF('izaberiGradPopupF'))">
+                                                                <option value="state" disabled selected>Država</option>
+                                                                <option value="cg">Crna Gora</option>
+                                                                <option value="srb">Srbija</option>
+                                                                <option value="bih">Bosna i Hercegovina</option>
+                                                                <option value="fr">Francuska</option>
+                                                                <option value="ch">Kina</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-sm-12 col-lg-6 mob_no_padd info">
+                                                        <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                                             Grad <img src="img/ellipse.png" alt="ellipse"><br>
                                                             <!-- <input type="text" class="form-control" id="city" name="city" required> -->
-                                                            <select data-live-search="true"
-                                                                class="form-control selectpicker" id="grad" name="grad"
-                                                                required>
-                                                                <option value="odaberi" disabled selected>Odaberi
-                                                                </option>
-                                                                <option value="Bar">Bar</option>
+                                                            <select data-live-search="true" class="form-control selectpicker" id="izaberiGradPopupF">
+                                                               <option value="" disabled selected>Grad</option>
+                                                                <!-- <option value="Bar">Bar</option>
                                                                 <option value="Podgorica">Podgorica</option>
-                                                                <option value="Pljevlja">Pljevlja</option>
+                                                                <option value="Pljevlja">Pljevlja</option> -->
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-6 mob_no_padd info">
@@ -755,7 +754,7 @@
                                                 <div class="formaPop">
                                                     <div class="row">
                                                         <div class="col-sm-12 col-lg-6 mob_no_padd info">
-                                                            Skola/Fakultet <img src="img/ellipse.png" alt="ellipse">
+                                                            Škola/Fakultet <img src="img/ellipse.png" alt="ellipse">
                                                             <input type="text" class="form-control" name="skola"
                                                                 id="skola" required>
                                                         </div>
@@ -764,29 +763,27 @@
                                                             <input type="text" class="form-control" name="stepen"
                                                                 id="stepen" required>
                                                         </div>
-                                                        <div class="col-sm-12 col-lg-6 mob_no_padd info">
+                                                        <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                                             Država <img src="img/ellipse.png" alt="ellipse"><br>
                                                             <!-- <input type="text" class="form-control" id="state" name="state" required> -->
-                                                            <select data-live-search="true"
-                                                                class="form-control selectpicker" name="drzava"
-                                                                id="drzavaO" required>
-                                                                <option value="odaberi" disabled selected>Odaberi
-                                                                </option>
-                                                                <option value="Crna Gora">Crna Gora</option>
-                                                                <option value="Srbija">Srbija</option>
+                                                            <select data-live-search="true" class="form-control selectpicker" id="izaberiDrzavuPopup2"
+                                                            onchange="configureDropDownListsEE(this,document.getElementById('izaberiGradPopup2'))">
+                                                                <option value="state" disabled selected>Država</option>
+                                                                <option value="cg">Crna Gora</option>
+                                                                <option value="srb">Srbija</option>
+                                                                <option value="bih">Bosna i Hercegovina</option>
+                                                                <option value="fr">Francuska</option>
+                                                                <option value="ch">Kina</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-sm-12 col-lg-6 mob_no_padd info">
+                                                        <div class="col-sm-6 col-xs-12 mob_no_padd info">
                                                             Grad <img src="img/ellipse.png" alt="ellipse"><br>
                                                             <!-- <input type="text" class="form-control" id="city" name="city" required> -->
-                                                            <select data-live-search="true"
-                                                                class="form-control selectpicker" name="grad" id="gradO"
-                                                                required>
-                                                                <option value="odaberi" disabled selected>Odaberi
-                                                                </option>
-                                                                <option value="Bar">Bar</option>
+                                                            <select data-live-search="true" class="form-control selectpicker" id="izaberiGradPopup2" >
+                                                               <option value="" disabled selected>Grad</option>
+                                                                <!-- <option value="Bar">Bar</option>
                                                                 <option value="Podgorica">Podgorica</option>
-                                                                <option value="Pljevlja">Pljevlja</option>
+                                                                <option value="Pljevlja">Pljevlja</option> -->
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-6 mob_no_padd info">
@@ -1006,9 +1003,10 @@
             </div>
         </div>
         <div class="row logovanje">
-            <div class="col-sm-12 col-lg-4">
+            <div class="col-sm-12 col-lg-4" id="mejl" >
                 <label for="email">eMail <img src="img/ellipse.png" alt="ellipse"></label>
                 <input type="email" id="email" name="email" class="sifra">
+                <div class="email-error error"></div>
             </div>
 
             <div class="col-sm-12 col-lg-4">
@@ -1051,7 +1049,7 @@
     </div>
     <!--  -->
     <div class="row justify-content-center">
-        <button class="btn btn-kreiraj" type="submit"> <img src="img/check.png" alt="check" class="check">
+        <button class="btn btn-kreiraj" id="mySubmit" type="submit"> <img src="img/check.png" alt="check" class="check">
             KREIRAJ NALOG</button>
     </div>
     </div>
@@ -1219,7 +1217,7 @@
         }
     </script>
 
-   
+<script src="script.js"></script>
 </body>
 
 </html>
