@@ -32,8 +32,8 @@ function samoSlova(event) {
 }
 
 /* ================= DRZAVE I GRADOVI ================= */
-
 function konfiguracija(izaberi, izaberiGrad) {
+  console.log('sssss')
   var cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
   var srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
   var bih = ["Sarajevo", "Mostar", "Banja Luka"];
@@ -78,6 +78,7 @@ function konfiguracija(izaberi, izaberiGrad) {
 }
 
 function createOption(izaberiDrzavu, text, value) {
+  console.log('s2')
   var opt = document.createElement("option");
   opt.value = value;
   opt.text = text;
@@ -86,95 +87,103 @@ function createOption(izaberiDrzavu, text, value) {
 }
 
 /* pop-up radno iskustvo */
-function configureDropDownListsF(izaberiRR, izaberiGradPopupF) {
-  var cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
-  var srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
-  var bih = ["Sarajevo", "Mostar", "Banja Luka"];
-  var fr = ["Strasbourg"];
-  var ch = ["Kina"];
+ function radnoIskustvo(izaberiRR, izaberiGradPopupF) {
+   console.log('2')
+  let cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
+  let srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
+  let bih = ["Sarajevo", "Mostar", "Banja Luka"];
+  let fr = ["Strasbourg"];
+  let ch = ["Kina"];
+
+  console.log(izaberiRR.value);
 
   switch (izaberiRR.value) {
-    case "cg":
+    
+    case "Crna Gora":
       izaberiGradPopupF.options.length = 0;
       for (i = 0; i < cg.length; i++) {
-        createOption(izaberiGradPopupF, cg[i], cg[i]);
+        createOption2(izaberiGradPopupF, cg[i], cg[i]);
       }
+       console.log('aj');
       break;
-    case "srb":
+    case "Srbija":
       izaberiGradPopupF.options.length = 0;
       for (i = 0; i < srb.length; i++) {
-        createOption(izaberiGradPopupF, srb[i], srb[i]);
+        createOption2(izaberiGradPopupF, srb[i], srb[i]);
       }
       break;
-    case "bih":
+    case "Bosna i Hercegovina":
       izaberiGradPopupF.options.length = 0;
       for (i = 0; i < bih.length; i++) {
-        createOption(izaberiGradPopupF, bih[i], bih[i]);
+        createOption2(izaberiGradPopupF, bih[i], bih[i]);
       }
       break;
-    case "fr":
+    case "Francuska":
       izaberiGradPopupF.options.length = 0;
       for (i = 0; i < fr.length; i++) {
-        createOption(izaberiGradPopupF, fr[i], fr[i]);
+        createOption2(izaberiGradPopupF, fr[i], fr[i]);
       }
       break;
-    case "ch":
+    case "Kina":
       izaberiGradPopupF.options.length = 0;
       for (i = 0; i < ch.length; i++) {
-        createOption(izaberiGradPopupF, ch[i], ch[i]);
+        createOption2(izaberiGradPopupF, ch[i], ch[i]);
       }
       break;
+      
     default:
       izaberiGradPopupF.options.length = 0;
       break;
+      
   }
 }
 
-function createOption(izaberiDrzavuPopupF, text, value) {
+function createOption2(izaberiDrzavuPopupF, text, value) {
+  console.log("s11111111")
   var opt = document.createElement("option");
   opt.value = value;
   opt.text = text;
   izaberiDrzavuPopupF.options.add(opt);
   $("#izaberiGradPopupF").selectpicker("refresh");
 }
-
+ 
 /* pop-up obrazovanje */
-function configureDropDownListsEE(izaberiEE, izaberiGradPopup2) {
+ function obrazovanjeP(izaberiEE, izaberiGradPopup2) {
   var cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
   var srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
   var bih = ["Sarajevo", "Mostar", "Banja Luka"];
   var fr = ["Strasbourg"];
   var ch = ["Kina"];
-
+console.log(izaberiEE.value)
   switch (izaberiEE.value) {
-    case "cg":
+    case "Crna Gora":
       izaberiGradPopup2.options.length = 0;
       for (i = 0; i < cg.length; i++) {
-        createOption(izaberiGradPopup2, cg[i], cg[i]);
+        createOption3(izaberiGradPopup2, cg[i], cg[i]);
       }
       break;
-    case "srb":
+    case "Srbija":
       izaberiGradPopup2.options.length = 0;
       for (i = 0; i < srb.length; i++) {
-        createOption(izaberiGradPopup2, srb[i], srb[i]);
+        createOption3(izaberiGradPopup2, srb[i], srb[i]);
       }
       break;
-    case "bih":
+    case "Bosna i Hercegovina":
       izaberiGradPopup2.options.length = 0;
       for (i = 0; i < bih.length; i++) {
-        createOption(izaberiGradPopup2, bih[i], bih[i]);
+        createOption3(izaberiGradPopup2, bih[i], bih[i]);
       }
       break;
-    case "fr":
+    case "Francuska":
       izaberiGradPopup2.options.length = 0;
       for (i = 0; i < fr.length; i++) {
-        createOption(izaberiGradPopup2, fr[i], fr[i]);
+        createOption3(izaberiGradPopup2, fr[i], fr[i]);
       }
       break;
-    case "ch":
+    case "Kina":
       izaberiGradPopup2.options.length = 0;
       for (i = 0; i < ch.length; i++) {
-        createOption(izaberiGradPopup2, ch[i], ch[i]);
+        createOption3(izaberiGradPopup2, ch[i], ch[i]);
       }
       break;
     default:
@@ -183,13 +192,13 @@ function configureDropDownListsEE(izaberiEE, izaberiGradPopup2) {
   }
 }
 
-function createOption(izaberiDrzavuPopup2, text, value) {
+function createOption3(izaberiDrzavuPopup2, text, value) {
   var opt = document.createElement("option");
   opt.value = value;
   opt.text = text;
   izaberiDrzavuPopup2.options.add(opt);
   $("#izaberiGradPopup2").selectpicker("refresh");
-}
+} 
 
 /* ============= OPEN FILE =============== */
 /* SLIKA */
@@ -407,7 +416,7 @@ $(document).ready(function() {
         "</div></div></div>"
     ).appendTo($("#output"));
 
-    $('.modal-body-dva').find('input,textarea').val(''); 
+    $(".modal-body-dva").find("input,textarea").val("");
   });
 
   /* obrazovanje */
@@ -463,7 +472,9 @@ $(document).ready(function() {
         "</div></div>"
     ).appendTo($("#output2"));
   });
-  $('.modal-body-dva').find('input,textarea').val(''); 
+  $(".modal-body-dva")
+    .find("input,textarea")
+    .val("");
 });
 
 /* ================ E-MAIL VALIDATION ================== */
