@@ -430,6 +430,21 @@ $(document).ready(function() {
   });
 });
 
+ /* ================ E-MAIL VALIDATION ================== */
+ $('#mejl').on('keyup change paste cut click', '#email', function(e) {
+    var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,
+        emailVal = $('#email').val(),
+        emailErrorMsg = (!emailVal || !pattern.test(emailVal)) 
+        ? 'E-mail nije validan.'
+        : '';
+
+    $('.email-error').text(emailErrorMsg);
+
+    if (emailErrorMsg) {
+        e.preventDefault();
+    }
+});
+
 /* ============ SHOW PASSWORD ========== */
 $(document).ready(function() {
   $("#show_hide_password a").on("click", function(event) {
@@ -445,6 +460,23 @@ $(document).ready(function() {
     }
   });
 });
+
+$(document).ready(function() {
+    $("#confirm_password a").on("click", function(event) {
+      event.preventDefault();
+      if ($("#confirm_password input").attr("type") == "text") {
+        $("#confirm_password input").attr("type", "password");
+        $("#confirm_password i").addClass("fas fa-eye");
+        $("#confirm_password i").removeClass("fa-eye");
+      } else if ($("#confirm_password input").attr("type") == "password") {
+        $("#confirm_password input").attr("type", "text");
+        $("#confirm_passwordd i").removeClass("fas fa-eye");
+        $("#confirm_password i").addClass("fa-eye");
+      }
+    });
+  });
+
+
 $("#pass-field, #confirm-pass-field").on("keyup", function() {
   if ($("#pass-field").val() == $("#confirm-pass-field").val()) {
     $("#poruka")
@@ -454,19 +486,4 @@ $("#pass-field, #confirm-pass-field").on("keyup", function() {
     $("#poruka")
       .html("Unesite istu šifru.")
       .css("color", "red");
-});
-
- /* ================ E-MAIL VALIDATION ================== */
-  $('#mejl').on('keyup change paste cut click', '#email', function(e) {
-    var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,
-        emailVal = $('#email').val(),
-        emailErrorMsg = (!emailVal || !pattern.test(emailVal)) 
-        ? 'E-mail nije validan.'
-        : '';
-
-    $('.email-error').text(emailErrorMsg);
-
-    if (emailErrorMsg) {
-        e.preventDefault();
-    }
 });
