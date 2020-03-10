@@ -21,29 +21,6 @@ $(document).ready(function () {
 });
 
 /* ================= DRZAVE I GRADOVI ================= */
-/* 
- var lookup = {
-    'Crna Gora': ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić', 'Herceg Novi'],
-    'Srbija': ['Beograd', 'Novi Sad', 'Subotica', 'Niš'],
-    'Bosna i Hercegovina': ['Sarajevo', 'Mostar', 'Banja Luka'],
-    'Francuska': ['Strasbourg'],
-    'Kina': ['Kina']
- };
- 
- $('#options').on('change', function() {
-    // Set selected option as variable
-    var selectValue = $(this).val();
- 
-    // Empty the target field
-    $('#choices').html('');
-    
-    // For each chocie in the selected option
-    for (i = 0; i < lookup[selectValue].length; i++) {
-       // Output choice in the target field
-       $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
-    }
- }); */
- 
 
 function configureDropDownLists(izaberi, izaberiGrad) {
     var cg = ['Podgorica', 'Bar', 'Pljevlja', 'Nikšić'];
@@ -94,7 +71,7 @@ function createOption(izaberiDrzavu, text, value) {
     opt.value = value;
     opt.text = text;
     izaberiDrzavu.options.add(opt);
-   /*  $('#izaberiGrad').selectpicker('refresh'); */
+    $('#izaberiGrad').selectpicker('refresh');
 }
 
 
