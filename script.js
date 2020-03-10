@@ -86,7 +86,7 @@ function createOption(izaberiDrzavu, text, value) {
 }
 
 /* pop-up radno iskustvo */
-/*  function configureDropDownListsF(izaberiRR, izaberiGradPopupF) {
+function configureDropDownListsF(izaberiRR, izaberiGradPopupF) {
   var cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
   var srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
   var bih = ["Sarajevo", "Mostar", "Banja Luka"];
@@ -136,10 +136,10 @@ function createOption(izaberiDrzavuPopupF, text, value) {
   opt.text = text;
   izaberiDrzavuPopupF.options.add(opt);
   $("#izaberiGradPopupF").selectpicker("refresh");
-};
- */
+}
+
 /* pop-up obrazovanje */
-/* function configureDropDownListsEE(izaberiEE, izaberiGradPopup2) {
+function configureDropDownListsEE(izaberiEE, izaberiGradPopup2) {
   var cg = ["Podgorica", "Bar", "Pljevlja", "Nikšić"];
   var srb = ["Beograd", "Novi Sad", "Subotica", "Niš"];
   var bih = ["Sarajevo", "Mostar", "Banja Luka"];
@@ -189,7 +189,7 @@ function createOption(izaberiDrzavuPopup2, text, value) {
   opt.text = text;
   izaberiDrzavuPopup2.options.add(opt);
   $("#izaberiGradPopup2").selectpicker("refresh");
-}; */
+}
 
 /* ============= OPEN FILE =============== */
 /* SLIKA */
@@ -354,8 +354,8 @@ $(document).ready(function() {
     let zavrsetakMjesec = $("#mjesecZ").val();
     let zavesetakGodina = $("#godinaZ").val();
     let zavrsetak = zavrsetakMjesec + " " + zavesetakGodina;
-    let grad = $("#grad").val();
-    let drzava = $("#drzava").val();
+    let grad = $("#izaberiGradPopupF").val();
+    let drzava = $("#izaberiDrzavuPopupF").val();
     let opis = $("#textArea1").val();
     let radimTrenutno = $("#radimTrenutno").is(":checked");
 
@@ -406,6 +406,8 @@ $(document).ready(function() {
         "</div>" +
         "</div></div></div>"
     ).appendTo($("#output"));
+
+    $('.modal-body-dva').find('input,textarea').val(''); 
   });
 
   /* obrazovanje */
@@ -413,8 +415,8 @@ $(document).ready(function() {
     event.preventDefault();
     let skola = $("#skola").val();
     let stepen = $("#stepen").val();
-    let drzavaO = $("#drzavaO").val();
-    let gradO = $("#gradO").val();
+    let drzavaO = $("#izaberiDrzavuPopup2").val();
+    let gradO = $("#izaberiGradPopup2").val();
     let mjesecPocetakO = $("#mjesecPocetakO").val();
     let godinaPocetakO = $("#godinaPocetakO").val();
     let pocetakO = mjesecPocetakO + " " + godinaPocetakO;
@@ -428,7 +430,10 @@ $(document).ready(function() {
       );
       return;
     }
-    if (mjesecPocetakO >= mjesecZavrsetakO && godinaPocetakO == godinaZavrsetkaO) {
+    if (
+      mjesecPocetakO >= mjesecZavrsetakO &&
+      godinaPocetakO == godinaZavrsetkaO
+    ) {
       alert(
         "Mjesec početka je veći od mjeseca završetka! Molimo unesite adekvatne podatke"
       );
@@ -458,6 +463,7 @@ $(document).ready(function() {
         "</div></div>"
     ).appendTo($("#output2"));
   });
+  $('.modal-body-dva').find('input,textarea').val(''); 
 });
 
 /* ================ E-MAIL VALIDATION ================== */
