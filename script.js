@@ -26,7 +26,7 @@ $(document).ready(function() {
 });
 
 function samoSlova(event) {
-  var pattern = /[a-zA-Z]+/g;
+  var pattern = /[a-zA-Zčćžšđ]+/g;
   / console.log(event.key); /;
   return pattern.test(event.key);
 }
@@ -83,6 +83,12 @@ function createOption(izaberiDrzavu, text, value) {
   opt.value = value;
   opt.text = text;
   izaberiDrzavu.options.add(opt);
+  $(".city-dis").removeClass("disabled");
+  $(".city-dis bootstrap-select show").removeClass("disabled");
+  $(".city-dis .dropdown-toggle").attr("aria-disabled", "false");
+  $(".city-dis .dropdown-toggle").removeClass("disabled");
+  $("#izaberiGrad").prop("disabled", false);
+  $("#izaberiGrad").selectpicker("refresh");
   $("#izaberiGrad").selectpicker("refresh");
 }
 
@@ -144,6 +150,12 @@ function createOption2(izaberiDrzavuPopupF, text, value) {
   opt.value = value;
   opt.text = text;
   izaberiDrzavuPopupF.options.add(opt);
+  $(".city-dis1").removeClass("disabled");
+  $(".city-dis1 bootstrap-select show").removeClass("disabled");
+  $(".city-dis1 .dropdown-toggle").attr("aria-disabled", "false");
+  $(".city-dis1 .dropdown-toggle").removeClass("disabled");
+  $("#izaberiGradPopupF").prop("disabled", false);
+  $("#izaberiGradPopupF").selectpicker("refresh");
   $("#izaberiGradPopupF").selectpicker("refresh");
 }
  
@@ -197,6 +209,12 @@ function createOption3(izaberiDrzavuPopup2, text, value) {
   opt.value = value;
   opt.text = text;
   izaberiDrzavuPopup2.options.add(opt);
+  $(".city-dis2").removeClass("disabled");
+  $(".city-dis2 bootstrap-select show").removeClass("disabled");
+  $(".city-dis2 .dropdown-toggle").attr("aria-disabled", "false");
+  $(".city-dis2 .dropdown-toggle").removeClass("disabled");
+  $("#izaberiGradPopup2").prop("disabled", false);
+  $("#izaberiGradPopup2").selectpicker("refresh");
   $("#izaberiGradPopup2").selectpicker("refresh");
 } 
 
