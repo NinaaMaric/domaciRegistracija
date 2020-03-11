@@ -287,12 +287,11 @@ $("#iskustvo1").click(function() {
 });
 
 /* popup */
-$(document).ready(function() {
-  $("#radimTrenutno").click(function() {
-    var inputValue = $(this).attr("value");
-    $("." + inputValue).toggle();
+  $(function() {
+    $("#radimTrenutno").on("click",function() {
+      $(".info5").toggle(this.unchecked);
+    });
   });
-});
 
 /* =============== SLAJDER VJESTINE ============== */
 let vjestine = 0;
@@ -416,7 +415,7 @@ $(document).ready(function() {
         "</div></div></div>"
     ).appendTo($("#output"));
 
-    $(".modal-body-dva").find("input,textarea").val("");
+   $(".modal-body-dva").find("input,textarea").val("");
   });
 
   /* obrazovanje */
