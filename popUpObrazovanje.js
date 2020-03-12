@@ -110,7 +110,7 @@ $(document).ready(function() {
       );
     });
     });
-    function obrazovanje1(){
+  function obrazovanje1(){
         event.preventDefault();
         let skola = $("#skola").val();
         let stepen = $("#stepen").val();
@@ -164,4 +164,4 @@ $(document).ready(function() {
             "<p style='color: rgb(241, 89, 41); text-align: center; text-decoration: underline; padding-top: 10px' data-toggle='modal' data-target='#modalIskustvo'> Uredi informacije</p>" +
             "</div></div>"
         ).appendTo($("#output2"));
-    }
+    } 

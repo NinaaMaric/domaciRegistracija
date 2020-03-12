@@ -2,7 +2,6 @@ let idd = 1;
 
 $(document).ready(function() {
     $(".btn-popUpBtn").on("click", function(event) {
-      console.log("test");
       event.preventDefault();
   
       let pozicija = $("#pozicija").val();
@@ -34,7 +33,7 @@ $(document).ready(function() {
         );
         return;
       }
-  
+      
       $(
         "<div class='leftBx py-1 px-1' style='cursor: pointer' id=" + "'" + idd + "'" + ">" +
           "<div class='wrapp'>" +
@@ -65,12 +64,10 @@ $(document).ready(function() {
           "</div>" +
           "</div></div></div>"
       ).appendTo($("#output"));
-  
-    
     });
 
     $(".modal").on("hidden.bs.modal", function() {
-        console.log('dddddd')
+        
         $(".modal-body-dva").find("input,textarea").val("");
         $("#izaberiDrzavuPopupF")
         .val("default")
@@ -127,8 +124,7 @@ $(document).ready(function() {
     });
 });
 
-   function myFunction5(){
-        console.log('izmijeni')
+   /* function myFunction5(){
         event.preventDefault();
   
         let pozicija = $("#pozicija").val();
@@ -162,7 +158,6 @@ $(document).ready(function() {
         }
 
         document.getElementById(idd).style.display = "none";
-            console.log(idd);
             idd++;
     
         $(
@@ -196,5 +191,5 @@ $(document).ready(function() {
             "</div></div></div>"
         ).appendTo($("#output"));
     }
-
+ */
   
